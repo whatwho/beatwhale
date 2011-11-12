@@ -31,7 +31,10 @@ Install
 Author
 ------
 
-Original author: Beöthy Miklós
+Original author: Digital Natives Kft.
+
+Contributors
+* Miklós Beöthy
 
 License
 -------

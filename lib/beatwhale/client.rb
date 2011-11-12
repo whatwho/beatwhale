@@ -28,6 +28,19 @@ module Beatwhale
       response["result"]["songs"].map{ |data| Song.new( data ) }
     end
     
+    def get_stream_key_by_song( song )
+      get_stream_key_by_song_id( song.song_id )
+    end
+    
+    def get_stream_key_by_song_id( song_id )
+      params = {
+        :songID => song_id,
+        :country => self.country,
+        :lowBitrate => false
+      }
+      response = request( "getStreamKeyStreamServer", params )
+    end
+    
     private
     
     def get_session( session_cache_file )

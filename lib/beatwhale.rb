@@ -12,7 +12,7 @@ module Beatwhale
   # <tt>File.join</tt>.
   #
   def self.libpath( *args )
-    rv =  args.empty? ? LIBPATH : ::File.join(LIBPATH, args.flatten)
+    rv = args.empty? ? LIBPATH : ::File.join(LIBPATH, args.flatten)
     if block_given?
       begin
         $LOAD_PATH.unshift LIBPATH
@@ -56,5 +56,12 @@ module Beatwhale
 
 end  # module Beatwhale
 
-Beatwhale.require_all_libs_relative_to(__FILE__)
+require 'beatwhale/request'
+require 'beatwhale/client'
+require 'beatwhale/song'
+require 'beatwhale/exception'
+
+require 'rest_client'
+
+# Beatwhale.require_all_libs_relative_to(__FILE__, "beatwhale")
 

@@ -29,14 +29,14 @@ module Beatwhale
           :content_type => :json,
           :accept => :json
         )
-        
         response = JSON.parse( response )
-        
-        response
       rescue => e
-        puts "an exception happened: #{e.message}"
+        raise Beatwhale::ConnectionException
       end
-      
+        
+      raise Beatwhale::RequestException.new( response['errors'].first ) if response['errors']
+        
+      response
     end
     
     private

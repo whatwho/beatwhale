@@ -9,7 +9,7 @@ module Beatwhale
     end
   
     def to_s
-      "#{@code} - #{@message}"
+      "Beatwhale::RequestException: #{@message} (error code: #{@code})"
     end
   end
   

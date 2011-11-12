@@ -13,5 +13,7 @@ Bones {
   authors  'Digital Natives Kft.'
   email    'info@digitalnatives.hu'
   url      'http://www.digitalnatives.hu'
+  
+  depend_on 'rest-client', '~>1.6.7'
 }
 
